@@ -25,7 +25,6 @@
 			<groupId>org.apache.thrift</groupId>
 			<artifactId>libthrift</artifactId>
 			<version>${thrift_version}</version>
-
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
