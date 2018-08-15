@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>jonathan.mayer</groupId>
+	<artifactId>mapd_thrift_maven</artifactId>
+	<version>4.1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>mapd_thrift_maven</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<thrift_version>0.10.0</thrift_version>
+		<thrift_files>${project.basedir}/src/main/resources</thrift_files>
+		<thrift_exec_path>D:/thrift-${thrift_version}.exe</thrift_exec_path>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.10.0</version>
+
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+
+		<plugins>
+
+
+
+
+
+
+			<plugin>
+				<groupId>org.apache.thrift.tools</groupId>
+				<artifactId>maven-thrift-plugin</artifactId>
+				<version>0.1.11</version>
+				<configuration>
+					<thriftExecutable>${thrift_exec_path}</thriftExecutable>
+					<thriftSourceRoot>${thrift_files}</thriftSourceRoot>
+					<outputDirectory>${project.basedir}/target/generated-sources/thrift</outputDirectory>
+
+					<generator>java</generator>
+				</configuration>
+				<executions>
+					<execution>
+						<id>thrift-sources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+
+
+					</execution>
+
+				</executions>
+			</plugin>
+
+		</plugins>
+
+	</build>
+</project>
+
