@@ -8,4 +8,6 @@ You will also have to edit the pom file for the location of this .exe.
 
 Thrift files are located under resources and are pulled from mapd v 4.1.0
 
+--->  https://github.com/mapd/mapd-core/tree/v4.1.0
+
 ....
